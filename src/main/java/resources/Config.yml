@@ -3,6 +3,8 @@ whitelist-status: true # Is the whitelist enabled
 bypass-permission: "" # A permission which would still permit the player to join even if he's not whitelisted
 permission: "VelocityWhitelist.use" # General permission for all commands
 
+motd-message: "the server is currently under maintenance"
+
 kick-message: "the server is currently under maintenance"
 add-message: "Added {player} to the whitelist!"
 whitelist-enabled: "whitelist in now enabled"
