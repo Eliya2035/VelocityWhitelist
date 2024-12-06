@@ -9,6 +9,7 @@ import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import com.velocitypowered.api.proxy.ProxyServer;
 import me.Eliya.velocityWhitelist.Commands.WhitelistCMD;
 import me.Eliya.velocityWhitelist.Listeners.PlayerLoginEvent;
+import me.Eliya.velocityWhitelist.Listeners.ProxyPingEvent;
 import me.Eliya.velocityWhitelist.Utilities.ConfigProperties;
 
 import java.nio.file.Path;
@@ -43,6 +44,7 @@ public class VelocityWhitelist {
         configProperties.loadConfig();
         proxy.getCommandManager().register("whitelist", new WhitelistCMD(this.configProperties));
         eventManager.register(this, new PlayerLoginEvent(this.configProperties));
+        eventManager.register(this, new ProxyPingEvent(this.configProperties));
     }
 
     public static ProxyServer getProxy() {
