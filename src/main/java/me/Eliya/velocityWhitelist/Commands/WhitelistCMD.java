@@ -158,7 +158,7 @@ public class WhitelistCMD implements SimpleCommand {
         WhitelistManager.removePlayerFromWhitelist(playerName);
         String message = (String) config.get("remove-message");
         Optional<Player> optionalPlayer = VelocityWhitelist.getProxy().getPlayer(playerName);
-        if (optionalPlayer.isPresent() && optionalPlayer.get().isActive())
+        if (optionalPlayer.isPresent() && optionalPlayer.get().isActive() && StatusManager.isWhitelistEnabled())
            optionalPlayer.get().disconnect(color((String) config.get("kick-message")));
         sender.sendMessage(color(message.replace("{player}", playerName)));
     }
